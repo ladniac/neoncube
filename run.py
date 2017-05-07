@@ -30,6 +30,10 @@ def main():
         )
     loop = get_event_loop()
     ensure_future(heartbeat(loop))
+
+    # Start other tasks here ...
+    # (will continue to work after communicator dies)
+
     loop.run_forever()
 
 
