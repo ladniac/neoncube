@@ -3,21 +3,15 @@
 import logging
 import uuid
 
-import redis
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 7
 
 HEARTBEAT_RATE = 3  # seconds
 HEARTBEAT_CHECK_RATE = HEARTBEAT_RATE + 2
 
-redis_client = redis.StrictRedis(
-    host='localhost',
-    port=6379,
-    db=7,
-    charset="utf-8",
-    decode_responses=True
-)
-
 logging.basicConfig(level=logging.INFO)
 
-PROCESS_ID = uuid.uuid4()
+PROCESS_ID = str(uuid.uuid4())
 
 PROVIDER_URL = 'http://blank.org/'
